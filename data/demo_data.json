@@ -1,0 +1,233 @@
+{
+  "customers": [
+    {
+      "id": "cust_101",
+      "name": "Acme Technologies",
+      "email": "billing@acmetechnologies.com",
+      "contact_person": "Sarah Jenkins",
+      "is_vip": false,
+      "segment": "Enterprise",
+      "account_created": "2023-01-15",
+      "notes": "Key account in cloud infrastructure."
+    },
+    {
+      "id": "cust_102",
+      "name": "Nova Retail",
+      "email": "finance@novaretail.io",
+      "contact_person": "Marcus Vance",
+      "is_vip": false,
+      "segment": "Mid-Market",
+      "account_created": "2023-05-20",
+      "notes": "Retail software integration client."
+    },
+    {
+      "id": "cust_103",
+      "name": "Vertex Systems",
+      "email": "ap@vertexsystems.com",
+      "contact_person": "Elena Rostova",
+      "is_vip": true,
+      "segment": "Enterprise VIP",
+      "account_created": "2022-11-04",
+      "notes": "Strategic partner with executive sponsor."
+    },
+    {
+      "id": "cust_104",
+      "name": "Apex Innovations",
+      "email": "accounts@apexinnovations.org",
+      "contact_person": "David Kim",
+      "is_vip": false,
+      "segment": "Growth",
+      "account_created": "2024-02-10",
+      "notes": "Recently expanded monthly tier."
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv_2001",
+      "invoice_number": "INV-2001",
+      "customer_id": "cust_101",
+      "customer_name": "Acme Technologies",
+      "amount": 2840.0,
+      "currency": "USD",
+      "status": "overdue",
+      "issue_date": "2026-07-15",
+      "due_date": "2026-08-01",
+      "overdue_days": 45,
+      "description": "Quarterly Enterprise SaaS Subscription & SLA Support"
+    },
+    {
+      "id": "inv_2002",
+      "invoice_number": "INV-2002",
+      "customer_id": "cust_102",
+      "customer_name": "Nova Retail",
+      "amount": 4150.0,
+      "currency": "USD",
+      "status": "overdue",
+      "issue_date": "2026-07-22",
+      "due_date": "2026-08-08",
+      "overdue_days": 38,
+      "description": "E-commerce POS Gateway Integration Module"
+    },
+    {
+      "id": "inv_2003",
+      "invoice_number": "INV-2003",
+      "customer_id": "cust_103",
+      "customer_name": "Vertex Systems",
+      "amount": 9500.0,
+      "currency": "USD",
+      "status": "overdue",
+      "issue_date": "2026-06-30",
+      "due_date": "2026-07-17",
+      "overdue_days": 60,
+      "description": "Dedicated Infrastructure Deployment & Custom Security Audit"
+    },
+    {
+      "id": "inv_2004",
+      "invoice_number": "INV-2004",
+      "customer_id": "cust_104",
+      "customer_name": "Apex Innovations",
+      "amount": 1200.0,
+      "currency": "USD",
+      "status": "overdue",
+      "issue_date": "2026-08-15",
+      "due_date": "2026-08-31",
+      "overdue_days": 15,
+      "description": "Monthly Growth Tier Maintenance"
+    }
+  ],
+  "complaints": [
+    {
+      "id": "comp_301",
+      "customer_id": "cust_102",
+      "customer_name": "Nova Retail",
+      "subject": "Billing Discrepancy & Delayed POS Integration Patch",
+      "description": "Client reported issue with API rate limit quota during peak promotion.",
+      "status": "open",
+      "priority": "HIGH",
+      "created_at": "2026-09-02T14:30:00Z"
+    }
+  ],
+  "communications": [
+    {
+      "id": "comm_401",
+      "customer_id": "cust_101",
+      "channel": "email",
+      "subject": "Invoice INV-2001 Receipt Confirmation",
+      "body": "Thank you for choosing OpsPilot. Attached is your quarterly statement.",
+      "sent_at": "2026-07-15T09:00:00Z",
+      "status": "delivered"
+    },
+    {
+      "id": "comm_402",
+      "customer_id": "cust_104",
+      "channel": "email",
+      "subject": "System Upgrade Notice",
+      "body": "Routine maintenance scheduled for Apex workspace.",
+      "sent_at": "2026-09-05T11:00:00Z",
+      "status": "delivered"
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule_1",
+      "code": "RULE-001",
+      "name": "VIP Protection",
+      "description": "Never automatically contact or trigger reminders for VIP customers.",
+      "category": "Customer Protection",
+      "enabled": true,
+      "action_on_match": "BLOCK",
+      "created_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "rule_2",
+      "code": "RULE-002",
+      "name": "Complaint Protection",
+      "description": "Do not send automated payment reminders when an open complaint exists.",
+      "category": "Customer Protection",
+      "enabled": true,
+      "action_on_match": "BLOCK",
+      "created_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "rule_3",
+      "code": "RULE-003",
+      "name": "Approval Threshold",
+      "description": "All customer-facing payment reminders require human approval.",
+      "category": "Risk Management",
+      "enabled": true,
+      "action_on_match": "REQUIRE_APPROVAL",
+      "created_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "rule_4",
+      "code": "RULE-004",
+      "name": "High-Risk Action Protection",
+      "description": "Financial refunds and account updates require explicit manager approval.",
+      "category": "Financial Safety",
+      "enabled": true,
+      "action_on_match": "REQUIRE_APPROVAL",
+      "created_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "rule_5",
+      "code": "RULE-005",
+      "name": "Critical Action Protection",
+      "description": "Destructive operations like deleting records or purging data are blocked by default.",
+      "category": "Security & Safety",
+      "enabled": true,
+      "action_on_match": "BLOCK",
+      "created_at": "2026-01-01T00:00:00Z"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "mtg_501",
+      "title": "Acme Technologies Q3 Operational Review",
+      "customer_id": "cust_101",
+      "customer_name": "Acme Technologies",
+      "start_time": "2026-09-16T10:00:00Z",
+      "end_time": "2026-09-16T11:00:00Z",
+      "attendees": ["Sarah Jenkins (VP Ops)", "Alex Rivera (Account Exec)"],
+      "location": "Google Meet",
+      "agenda": "Review Q3 usage metrics, discuss INV-2001 balance, plan capacity expansion."
+    },
+    {
+      "id": "mtg_502",
+      "title": "Vertex Systems Partnership Sync",
+      "customer_id": "cust_103",
+      "customer_name": "Vertex Systems",
+      "start_time": "2026-09-16T14:00:00Z",
+      "end_time": "2026-09-16T15:00:00Z",
+      "attendees": ["Elena Rostova (CTO)", "Michael Chang (VP Partnerships)"],
+      "location": "Zoom",
+      "agenda": "Annual security compliance review & expansion roadmap."
+    }
+  ],
+  "tasks": [],
+  "integrations": [
+    {
+      "id": "int_1",
+      "name": "Gmail / Email Dispatcher",
+      "type": "email",
+      "status": "connected",
+      "provider": "MockEmailAdapter (Gmail API Ready)",
+      "last_synced": "2026-09-15T08:30:00Z"
+    },
+    {
+      "id": "int_2",
+      "name": "HubSpot CRM",
+      "type": "crm",
+      "status": "connected",
+      "provider": "MockCRMAdapter (HubSpot API Ready)",
+      "last_synced": "2026-09-15T08:30:00Z"
+    },
+    {
+      "id": "int_3",
+      "name": "Google Calendar",
+      "type": "calendar",
+      "status": "connected",
+      "provider": "MockCalendarAdapter (Google Calendar API Ready)",
+      "last_synced": "2026-09-15T08:30:00Z"
+    }
+  ]
+}
